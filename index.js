@@ -7,7 +7,7 @@ require("./model/conn")
 const app = express();
 const port = process.env.PORT || 5000;
 
-console.log(process.env.MONGO_URI);
+console.log("yoyo", process.env.MONGO_URI);
 
 app.set('view engine', 'ejs');
 app.use(express.json());
