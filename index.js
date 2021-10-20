@@ -1,6 +1,7 @@
 const express = require("express");
 const Customer = require("./model/customer");
 const History = require("./model/history");
+const path = require("path")
 require("./model/conn")
 
 const app = express();
@@ -13,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 if(process.env.NODE_ENV == production)
 {
     app.get("*", (req, res) =>{
-        res.sendFile("./views/index.ejs");
+        res.sendFile(path.join(__dirname, "views", "index.ejs"));
     })
 }
 
