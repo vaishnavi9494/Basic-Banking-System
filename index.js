@@ -4,6 +4,7 @@ const History = require("./model/history");
 require("./model/conn")
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.json());
@@ -76,7 +77,7 @@ app.get("/history", async (req, res) => {
 
 })
 
-app.listen(80, () => {
+app.listen(port, () => {
     console.log("Server running")
 })
 
